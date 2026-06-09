@@ -1,0 +1,20 @@
+{
+  "source_run": "runs/swepro-15task-mini-20260608",
+  "summary_csv": "runs/swepro-15task-mini-20260608/summary/generation_status_combined.csv",
+  "models": [
+    "claude-haiku-4-5",
+    "claude-opus-4-8",
+    "kimi-k2.5"
+  ],
+  "task_count": 15,
+  "record_count": 45,
+  "copy_counts": {
+    "trajectory": 45,
+    "prediction": 45,
+    "usage": 45,
+    "metadata": 45
+  },
+  "missing_task_metadata": [],
+  "missing_files": [],
+  "result_semantics": "provisional: pass iff exit_status == Submitted and has_diff == True; no verifier rewards were present in source artifacts"
+}

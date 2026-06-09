@@ -1,0 +1,99 @@
+{
+  "total_tasks": 15,
+  "models": [
+    "claude-haiku-4-5",
+    "claude-opus-4-8",
+    "kimi-k2.5"
+  ],
+  "model_stats": {
+    "claude-haiku-4-5": {
+      "total_runs": 15,
+      "total_pass": 9,
+      "total_fail": 6,
+      "pass_rate": 0.6,
+      "tasks_with_any_pass": 9,
+      "pass_at_1_approx": 0.6
+    },
+    "claude-opus-4-8": {
+      "total_runs": 15,
+      "total_pass": 11,
+      "total_fail": 4,
+      "pass_rate": 0.7333,
+      "tasks_with_any_pass": 11,
+      "pass_at_1_approx": 0.7333
+    },
+    "kimi-k2.5": {
+      "total_runs": 15,
+      "total_pass": 15,
+      "total_fail": 0,
+      "pass_rate": 1.0,
+      "tasks_with_any_pass": 15,
+      "pass_at_1_approx": 1.0
+    }
+  },
+  "headroom": {
+    "both_pass": 6,
+    "both_fail": 0,
+    "claude-haiku-4-5_only": 0,
+    "claude-opus-4-8_only": 0,
+    "kimi-k2.5_only": 1,
+    "mixed": 8
+  },
+  "consistency": {
+    "claude-haiku-4-5": {
+      "0_of_1": 6,
+      "1_of_1": 9
+    },
+    "claude-opus-4-8": {
+      "0_of_1": 4,
+      "1_of_1": 11
+    },
+    "kimi-k2.5": {
+      "1_of_1": 15
+    }
+  },
+  "difficulty_distribution": {
+    "unknown": 15
+  },
+  "category_distribution": {
+    "swe-bench-pro": 15
+  },
+  "by_difficulty": {
+    "unknown": {
+      "claude-haiku-4-5": {
+        "pass": 9,
+        "total": 15,
+        "pass_rate": 0.6
+      },
+      "claude-opus-4-8": {
+        "pass": 11,
+        "total": 15,
+        "pass_rate": 0.7333
+      },
+      "kimi-k2.5": {
+        "pass": 15,
+        "total": 15,
+        "pass_rate": 1.0
+      }
+    }
+  },
+  "by_category": {
+    "swe-bench-pro": {
+      "claude-haiku-4-5": {
+        "pass": 9,
+        "total": 15,
+        "pass_rate": 0.6
+      },
+      "claude-opus-4-8": {
+        "pass": 11,
+        "total": 15,
+        "pass_rate": 0.7333
+      },
+      "kimi-k2.5": {
+        "pass": 15,
+        "total": 15,
+        "pass_rate": 1.0
+      }
+    }
+  }
+}
